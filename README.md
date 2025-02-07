@@ -27,7 +27,7 @@ A smart language-learning app powered by AI, offering interactive text-to-text a
    
 2. **Audio-to-Audio**: Speak with the bot, and once the conversation is over, you will get a transcript of it. The app highlights mistakes in red and suggestions in green.
 
-3. **Mistake Tracking**: In premium versions, you’ll be able to see areas where you made mistakes. Premium users get the benefit of seeing corrections and improved sentence structure.
+3. **Mistake Tracking**: In premium version, you’ll be able to see areas where you made mistakes. Premium users get the benefit of seeing corrections and improved sentence structure.
 
 ---
 ## **Note**: This file contains only AI part.
