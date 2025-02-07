@@ -5,7 +5,7 @@ import difflib
 import re
 import langid
 
-openai.api_key = "sk-svcacct-KBnnF-0KRobG1j17ah1p-jQ81c9HUGpdHZAsCawOMJSvaxoG2ozHgroUFedjkpT3BlbkFJrywiP4MDf-sqI9diCPyu0rT2M6rC1Ofeko-lK2u0qDDdR9Qgr4NGuCEBBczlUA"  
+openai.api_key = ""  
 
 app = FastAPI()
 
