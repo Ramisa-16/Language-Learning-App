@@ -1,33 +1,130 @@
-# Language Learning App
-
-A smart language-learning app powered by AI, offering interactive text-to-text and audio-to-audio conversations with built-in feedback on mistakes and suggestions for improvement.
-
-## Features
-
-### Free Plan:
-- **Text to Text Conversation**: Chat with the bot to practice language skills.
-- **Audio to Audio Conversation**: Speak with the bot and engage in conversations. Afterward, the conversation is displayed as text for further review.
-- **See Messages**: Users can see their audio conversation in text.
-- **Track**: User can set goal and see their learning time.
-- **Limit**: 25messages in 24hours.
-
-### Premium Plan:
-- **Text to Text Conversation with Grammar Correction**: Practice conversations while receiving real-time grammar corrections, including suggestions for sentence structure improvements.
-- **Audio to Audio Conversation**: Same as free, but with added benefits.
-- **Mistake Tracking with Fixes**: After a conversation, incorrect syntax is highlighted in red, while any suggested changes or fixes will be shown in green.
-- **See Mistakes and Improvements**: View the corrected conversation with all suggestions and mistakes clearly indicated.
-- **Level**: User can set level: Beginner, Intermediate, Advanced.
-- **Set Goal**: 15min, 30min, 45min, 60min etc.
-
+<h1 align="center">🗣️ Language Learning App</h1>
+ 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OpenAI-GPT-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TTS%20%2F%20STT-Audio%20AI-00b39e?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
+</p>
+<p align="center">
+  An AI-powered language learning app with <strong>text-to-text</strong> and <strong>audio-to-audio</strong> conversation modes,
+  real-time grammar correction, mistake tracking, and tiered free/premium plans.
+</p>
 ---
-
-## How it Works
-
-1. **Text-to-Text**: You can type your sentences, and the bot will respond with accurate and engaging replies. In the premium version, you'll also receive grammar corrections.
-   
-2. **Audio-to-Audio**: Speak with the bot, and once the conversation is over, you will get a transcript of it. The app highlights mistakes in red and suggestions in green.
-
-3. **Mistake Tracking**: In premium version, you’ll be able to see areas where you made mistakes. Premium users get the benefit of seeing corrections and improved sentence structure.
-
+ 
+## ✨ Features
+ 
+### 🆓 Free Plan
+| Feature | Description |
+|---|---|
+| 💬 Text-to-Text Chat | Practice writing by chatting with the AI |
+| 🎙️ Audio-to-Audio | Speak with the AI — conversation shown as text afterward |
+| 🎯 Goal Tracking | Set a daily learning time goal and track progress |
+| ⏱️ Usage Limit | 25 messages per 24 hours |
+ 
+### 💎 Premium Plan
+| Feature | Description |
+|---|---|
+| ✅ Grammar Correction | Real-time sentence structure feedback while chatting |
+| 🔴🟢 Mistake Tracking | Errors highlighted in **red**, fixes shown in **green** |
+| 📊 Full Review | See corrected conversation with all improvements |
+| 🎓 Level Selection | Beginner / Intermediate / Advanced |
+| ⏰ Flexible Goals | 15 / 30 / 45 / 60 min daily targets |
+ 
 ---
-## **Note**: This file contains only AI part.
+ 
+## 🏗️ Architecture
+ 
+```
+User Input (text or audio)
+        │
+        ▼
+ ┌─────────────────┐
+ │  Speech-to-Text │  ← audio mode only
+ └────────┬────────┘
+          │
+          ▼
+ ┌─────────────────────────┐
+ │  LLM (OpenAI GPT)       │  ← language tutor persona
+ │  + conversation memory  │
+ └────────┬────────────────┘
+          │
+          ▼
+ ┌─────────────────┐     ┌──────────────────────┐
+ │  Text Response  │     │  Grammar Analysis     │
+ │  (free + prem)  │     │  (premium only)       │
+ └─────────────────┘     └──────────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │  Text-to-Speech │  ← audio mode only
+ └─────────────────┘
+```
+ 
+---
+ 
+## 📁 Project Structure
+ 
+```
+Language-Learning-App/
+├── main.py          # Entry point — text-to-text conversation
+├── audion.py        # Audio-to-audio conversation engine
+├── tfree.py         # Free tier text conversation
+├── tnew.py          # Premium text conversation with grammar correction
+├── vfree.py         # Free tier voice conversation
+└── requirements.txt # Dependencies
+```
+ 
+> **Note:** This repository contains the AI/backend layer only.
+ 
+---
+ 
+## 🚀 Getting Started
+ 
+### Prerequisites
+- Python 3.10+
+- OpenAI API key
+### Installation
+ 
+```bash
+git clone https://github.com/Ramisa-16/Language-Learning-App.git
+cd Language-Learning-App
+pip install -r requirements.txt
+```
+ 
+### Configuration
+ 
+```bash
+# Set your OpenAI API key
+export OPENAI_API_KEY="your-api-key-here"
+```
+ 
+### Run
+ 
+```bash
+# Text conversation (free tier)
+python tfree.py
+ 
+# Audio conversation
+python audion.py
+ 
+# Premium text with grammar correction
+python tnew.py
+```
+ 
+---
+ 
+## 🛠️ Tech Stack
+ 
+- **Language:** Python 3.10+
+- **AI:** OpenAI GPT (conversation engine)
+- **Speech:** Text-to-Speech (TTS) + Speech-to-Text (STT)
+- **Audio Processing:** PyAudio / SpeechRecognition
+---
+ 
+## 👩‍💻 Author
+ 
+**Ramisa Sharar Nidhi** — AI Developer @ Betopia Group  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ramisashararnidhi-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/ramisashararnidhi)
+[![GitHub](https://img.shields.io/badge/GitHub-Ramisa--16-181717?style=flat&logo=github)](https://github.com/Ramisa-16)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Expert-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/ramisashararnidhi)
